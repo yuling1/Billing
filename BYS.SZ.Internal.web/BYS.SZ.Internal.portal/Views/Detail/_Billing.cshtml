@@ -1,0 +1,58 @@
+﻿@model List<BYS.SZ.Internal.db.Model.BillingModel>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>SOW</th>
+            <th>Name</th>
+            <th>Alias</th>
+            <th>Onboard Date</th>
+            <th>Location</th>
+            <th>Title</th>
+            <th>Work date</th>
+            <th>Rate</th>
+            <th>Salary</th>
+        </tr>
+    </thead>
+    <tbody>
+        @*<tr>
+                <td>SOW</td>
+                <td>Name</td>
+                <td>Alias</td>
+                <td>OnboardDate</td>
+                <td>Location</td>
+                <td>Title</td>
+                <td>Workdate</td>
+                <td>Rate</td>
+                <td>alary</td>
+                <td>MetaData</td>
+            </tr>*@
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.SOW</td>
+                <td>@item.Name</td>
+                <td>@item.Alias</td>
+                <td>@item.OnboardDate</td>
+                <td>@item.Location</td>
+                <td>@item.Title</td>
+                <td>@item.Workdate</td>
+                <td>@item.Rate</td>
+                <td>@item.Salary</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<script type="text/javascript">
+    $(function selectRow() {
+        $("tr").click(function () {
+            if ($(this).hasClass("table-selected")) {
+                $(this).removeClass("table-selected");
+            }else{
+                $(this).addClass("table-selected");
+            }
+        });
+    })
+</script>
